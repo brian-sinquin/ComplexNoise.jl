@@ -1,7 +1,7 @@
 name = "ComplexNoise"
 uuid = "616c1b51-bb48-43d7-bb31-1093fb1118c9"
 authors = ["Brian SINQUIN <brian.sinquin@gmail.com> and contributors"]
-version = "0.1.0-DEV"
+version = "0.1.0"
 
 [compat]
 julia = "1.6"
