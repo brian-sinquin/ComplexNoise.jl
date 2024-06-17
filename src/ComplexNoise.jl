@@ -114,6 +114,29 @@ function PSDToTime(psd::AbstractArray{T1}, fmin::T2) where {T1 <: Real, T2 <: Re
 	return t, x
 end
 
+
+# WIP 
+
+function PSDwelch(s, nfft, noverlap)
+
+	Ns = length(s)
+	#!TODO check lengths
+	@show n = Ns ÷ (nfft - noverlap)
+	h = 1.0 # window
+	S = zeros(nfft ÷ 2 + 1)
+	for i in 0:n-1
+		S = S .+ abs2.(rfft(s[1+(i)*(nfft-noverlap):(i)*(nfft-noverlap)+nfft]) / nfft)
+
+	end
+
+	return S ./ n
+
+
+
+
+
+end
+
 end
 
 
